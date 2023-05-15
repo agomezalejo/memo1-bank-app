@@ -1,4 +1,4 @@
-package com.aninfo.service;
+package com.aninfo.services;
 
 import com.aninfo.exceptions.DepositNegativeSumException;
 import com.aninfo.exceptions.InsufficientFundsException;
