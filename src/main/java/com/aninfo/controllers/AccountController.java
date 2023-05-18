@@ -52,13 +52,4 @@ public class AccountController {
         accountService.deleteById(cbu);
     }
 
-    @PutMapping("/{cbu}/withdraw")
-    public Account withdraw(@PathVariable Long cbu, @RequestParam Double sum) {
-        return accountService.withdraw(cbu, sum);
-    }
-
-    @PutMapping("/{cbu}/deposit")
-    public Account deposit(@PathVariable Long cbu, @RequestParam Double sum) {
-        return accountService.deposit(cbu, sum);
-    }
 }

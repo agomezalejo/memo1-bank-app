@@ -1,5 +1,6 @@
 package com.aninfo.controllers;
 
+import com.aninfo.model.Account;
 import com.aninfo.model.Transaction;
 import com.aninfo.services.TransactionService;
 import com.aninfo.dto.TransactionRequestDto;
@@ -26,7 +27,6 @@ public class TransactionController {
         return transactionService.createTransaction(cbu, sum, type);
     }
 
-
     @GetMapping("/{id}")
     public ResponseEntity<Transaction> getTransaction(@PathVariable Long id) {
         Optional<Transaction> transactionOptional = transactionService.getTransactionById(id);
@@ -38,6 +38,10 @@ public class TransactionController {
         return transactionService.getTransactionsAccountsByCbu(cbu);
     }
 
+    @DeleteMapping("/{transactionId}")
+    public void deleteTransaction(@PathVariable Long transactionId, @RequestParam Long cbu) {
+        transactionService.deleteTransaction(transactionId, cbu);
+    }
 
 }
 
